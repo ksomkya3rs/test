@@ -9441,15 +9441,13 @@ local T =[[
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
-
 {
 {text = 'ᗪᗴᐯ Տᗴᘔᖇ', url = "https://t.me/ttccss"},{text = 'ᗪᗴᐯ ᖇᗴՏᕼᗩ', url = "https://t.me/R_E_S_H_A_A"}
 },
 {
-},
-{
 {text = ' 〆 Source Channel', url = "https://t.me/Shanel_Resha"},{text =   '〆 Tws 𝙢𝙞𝙡𝙖𝙣  〠 ', url = "https://t.me/Shanel_Resha"}
 },
+}
 }
 local msgg = msg_id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.."&caption=".. URL.escape(T).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
