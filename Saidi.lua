@@ -12927,7 +12927,7 @@ data = {
 {text = 'سورس',type = 'text'},{text = 'المطور', type = 'text'},
 },
 {
-{text = '𖤍•──∴ ِ𝖱ٌeٓٓBoِٰ𝖱tٌِeِ𝖱 ∴──•𖤍',type = 'text'},
+{text = '𓄼 استوريهات 𓄹',type = 'text'},
 },
 {
 {text = 'غنيلي',type = 'text'},{text = 'استوري', type = 'text'},
@@ -13039,6 +13039,30 @@ return LuaTele.sendText(msg_chat_id,msg_id,'* ✧ اهلا بك عزيزي ال�
 end
 end
 
+if text == '𓄼 استوريهات 𓄹' then
+if not msg.ControllerBot then 
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*هاذا الامر يخص⦗ '..Controller_Num(0)..' ⦘* ',"md",true)  
+end
+local reply_markup = LuaTele.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
+data = {
+{
+{text = '𓄼 تفعيل التواصل 𓄹',type = 'text'},{text = '𓄼 تعطيل التواصل 𓄹', type = 'text'},
+},
+{
+{text = '𓄼 تفعيل البوت الخدمي 𓄹',type = 'text'},{text = '𓄼 تعطيل البوت الخدمي 𓄹', type = 'text'},
+},
+{
+{text = '𓄼 تعطيل الاذاعه 𓄹',type = 'text'},{text = '𓄼 تفعيل الاذاعه 𓄹',type = 'text'},
+},
+{
+{text = '𓄼 تعطيل المغادره 𓄹',type = 'text'},{text = '𓄼 تفعيل المغادره 𓄹',type = 'text'},
+},
+{
+{text = '𓄼 القائمه الرئيسيه 𓄹',type = 'text'},
+},
+}
+}
+return LuaTele.sendText(msg_chat_id,msg_id,' *اهلا بك عزيزي المطور الاساسي* اوامر التفعيل', 'md', false, false, false, false, reply_markup)
 if text == '〘 المساعد 〙' or text == '〘 مساعد 〙' or text == 'المساعد' or text == 'مساعد' then   
 local id = Redis:get(Saidi.."id:JABWA:Groups")
 urrl = https.request('http://api.telegram.org/bot'..Token..'/getchat?chat_id='..id)
