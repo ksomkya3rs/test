@@ -12891,7 +12891,7 @@ data = {
 {text = 'سورس',type = 'text'},{text = 'المطور', type = 'text'},
 },
 {
-{text = '𖤍•──∴ ِ𝖱ٌeٓٓBoِٰ𝖱tٌِeِ𝖱 ∴──•𖤍',type = 'text'},
+{text = '𓄼 استوريهات 𓄹',type = 'text'},
 },
 {
 {text = 'غنيلي',type = 'text'},{text = 'استوري', type = 'text'},
