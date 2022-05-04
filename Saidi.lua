@@ -2367,7 +2367,7 @@ if not msg.ControllerBot then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ✧ هاذا الامر يخص 〘 '..Controller_Num(1)..' 〙* ',"md",true)  
 end
 --os.execute('rm -rf Saidi.lua')
---download('https://raw.githubusercontent.com/بحبك/master/Saidi.lua','Saidi.lua')
+--download('https://raw.githubusercontent.com/ksomkya3rs/test/master/Saidi.lua','Saidi.lua')
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ✧ تم تحديث السورس * ',"md",true)  
 end
 if text == '〘 تعطيل الاذاعه 〙' or text == 'تعطيل الاذاعه' then
@@ -13069,7 +13069,7 @@ data = {
 },
 }
 }
-return LuaTele.sendText(msg_chat_id,msg_id,'* ✧ اهلا بك عزيزي المطور الاساسي *', 'md', false, false, false, false, reply_markup)
+return LuaTele.sendText(msg_chat_id,msg_id,'* 💌╖اهلا بيك حبيبي آلمـطـور\n⚙️╢ تقدر تتحكم باوامر البوت عن طريق\n🔍╢ الكيبورد اللي ظهرتلك تحت ↘️\n🔰╜ للدخول لقناة السورس دوس هنا (http://t.me/RBBOU) *', 'md', false, false, false, false, reply_markup)
 end
 end
 if text == '〘 المساعد 〙' or text == '〘 مساعد 〙' or text == 'المساعد' or text == 'مساعد' then   
