@@ -11206,9 +11206,9 @@ return LuaTele.sendText(msg_chat_id,msg_id, [[*
 ╝•❻• ‹ اوامر الفتح والقفل ›
 *]],"md",false, false, false, false, reply_markup)
 end
-if text == 'الالعاب' or text == 'الالعاب التسليه' or text == 'الاضافات' or text == 'الالعاب الالكترونيه' then
+if text == 'اذاعتي' or text == 'الالعاب التسليه' or text == 'الاضافات' or text == 'الالعاب الالكترونيه' then
 if not msg.Addictive then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ✧ هاذا الامر يخص 〘 '..Controller_Num(7)..' 〙* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ✧ هاذا الامر يخص 〘 '..Controller_Num(1)..' 〙* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Saidi..'Channel:Join')}, },}}
@@ -11218,17 +11218,20 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '𓄼• الالعاب التسليه •𓄹', data = msg.sender.user_id..'/normgm'},
+{text = '☉┇اذاعه خاص', data = msg.sender.user_id..'/Send:Bc:Pv'}, {text = '☉┇اذاعه للمجموعات', data = msg.sender.user_id..'/Send:Bc:Grops'}, 
 },
 {
-{text = '𓄼• الالعاب الالكترونيه •𓄹', data = msg.sender.user_id..'/degm'}, 
+{text = '☉┇اذاعه بالتوجيه', data = msg.sender.user_id..'/Send:Fwd:Grops'}, {text = '☉┇اذاعه بالتوجيه خاص', data = msg.sender.user_id..'/Send:Fwd:Pv'}, 
 },
 {
-{text = '𓄼• sᴏᴜʀᴄᴇ sᴀɪᴅɪ •𓄹', url = 't.me/S_a_i_d_i'}, 
+{text = '☉┇اذاعه بالتثبيت', data = msg.sender.user_id..'/Bc:Grops:Pin'}, {text = '☉┇اذاعه للمطورين', data = msg.sender.user_id..'/NoNextSeting'}, 
+},
+{
+{text = 'sَoٰuِِ𝖱ٰcٌe  ِ𝖱ٌeٓٓBoِٰ𝖱tٌِeِ𝖱', url = 't.me/RBBOU'}, 
 },
 }
 }
-return LuaTele.sendText(msg_chat_id,msg_id,' ✧ اليك قسم الالعاب من سورس صعيدي ',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg_chat_id,msg_id,'☉┇مرحبا بك عزيزي\n☉┇انت الان في قسم الاذعه\n☉┇قم بالتحكم من خلال الكيبورد..في الاسفل',"md",false, false, false, false, reply_markup)
 end
 if Redis:get(Saidi.."zhrfa"..msg.sender.user_id) == "sendzh" then
 zh = https.request('https://apiSaidi.ml/zrf.php?Saidi='..URL.escape(text)..'')
