@@ -13041,7 +13041,6 @@ end
 
 if text == '𓄼 استوريهات 𓄹' then
 if not msg.ControllerBot then 
-return LuaTele.sendText(msg_chat_id,msg_id,'\n*هاذا الامر يخص⦗ '..Controller_Num(0)..' ⦘* ',"md",true)  
 end
 local reply_markup = LuaTele.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
 data = {
