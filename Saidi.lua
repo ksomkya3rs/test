@@ -11387,7 +11387,6 @@ end
 return LuaTele.sendText(msg_chat_id,msg_id,'*خالتك جرت ورايا 😹💔*',"md",false, false, false, false, reply_markup)
 end
 if text == 'سلام عليكم' or text == 'السلام عليكم' then
-if not Redis:get(Saidi.."Jabwa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* ✧ ردود السورس معطلة*","md",true)  
 end
 return LuaTele.sendText(msg_chat_id,msg_id,'*وعليكم السلام 🌝💜*',"md",false, false, false, false, reply_markup)
