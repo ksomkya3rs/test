@@ -13046,23 +13046,40 @@ end
 local reply_markup = LuaTele.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
 data = {
 {
-{text = '𓄼 تفعيل التواصل 𓄹',type = 'text'},{text = '𓄼 تعطيل التواصل 𓄹', type = 'text'},
+{text = 'المطور سيزر',type = 'text'},{text = 'المطور ماندو', type = 'text'},
 },
 {
-{text = '𓄼 تفعيل البوت الخدمي 𓄹',type = 'text'},{text = '𓄼 تعطيل البوت الخدمي 𓄹', type = 'text'},
+{text = 'قناة السورس',type = 'text'},{text = 'جروب الدعم', type = 'text'},
 },
 {
-{text = '𓄼 تعطيل الاذاعه 𓄹',type = 'text'},{text = '𓄼 تفعيل الاذاعه 𓄹',type = 'text'},
+{text = 'سورس',type = 'text'},{text = 'المطور', type = 'text'},
 },
 {
-{text = '𓄼 تعطيل المغادره 𓄹',type = 'text'},{text = '𓄼 تفعيل المغادره 𓄹',type = 'text'},
+{text = '𓄼 استوريهات 𓄹',type = 'text'},
 },
 {
-{text = '𓄼 القائمه الرئيسيه 𓄹',type = 'text'},
+{text = 'غنيلي',type = 'text'},{text = 'استوري', type = 'text'},
+},
+{
+{text = 'رتبتي',type = 'text'},{text = 'ايدي', type = 'text'},
+},
+{
+{text = 'لو خيروك',type = 'text'},{text = 'حروف', type = 'text'},
+},
+{
+{text = 'نكته',type = 'text'},{text = 'اذكار', type = 'text'},
+},
+{
+{text = 'تويت',type = 'text'},{text = 'كتبات', type = 'text'},
+},
+{
+{text = 'أضغط لاضافه ألبوت لمجموعتك 𖠪', url = 't.me/'..UserBot..'?startgroup=new'}, 
 },
 }
 }
-return LuaTele.sendText(msg_chat_id,msg_id,' *اهلا بك عزيزي المطور الاساسي* اوامر التفعيل', 'md', false, false, false, false, reply_markup)
+return LuaTele.sendText(msg_chat_id,msg_id,Redis:get(Saidi.."Start:Bot"),"md",false, false, false, false, reply_markup)
+end
+else
 
 if text == '〘 المساعد 〙' or text == '〘 مساعد 〙' or text == 'المساعد' or text == 'مساعد' then   
 local id = Redis:get(Saidi.."id:JABWA:Groups")
