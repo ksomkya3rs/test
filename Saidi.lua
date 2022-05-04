@@ -11141,6 +11141,37 @@ keyboard.inline_keyboard = {
 local msgg = msg_id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.."&caption=".. URL.escape(Name).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
+if text == 'اوامر الاذاعه' then
+if not msg.Addictive then
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* بس يعرص الامر يخص 〘 '..Controller_Num(1)..' 〙* ',"md",true)  
+end
+if ChannelJoin(msg) == false then
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Saidi..'Channel:Join')}, },}}
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n ✧ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+end
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = '☉┇اذاعه خاص', data = msg.sender.user_id..'/Send:Bc:Pv'}, {text = '☉┇اذاعه للمجموعات', data = msg.sender.user_id..'/Send:Bc:Grops'}, 
+},
+{
+{text = '☉┇اذاعه بالتوجيه', data = msg.sender.user_id..'/Send:Fwd:Grops'}, {text = '☉┇اذاعه بالتوجيه خاص', data = msg.sender.user_id..'/Send:Fwd:Pv'}, 
+},
+{
+{text = '☉┇اذاعه بالتثبيت', data = msg.sender.user_id..'/Bc:Grops:Pin'}, {text = '☉┇اذاعه للمطورين', data = msg.sender.user_id..'/NoNextSeting'}, 
+},
+{
+{text = 'sَoٰuِِ𝖱ٰcٌe  ِ𝖱ٌeٓٓBoِٰ𝖱tٌِeِ𝖱', url = 't.me/RBBOU'}, 
+},
+}
+}
+return LuaTele.sendText(msg_chat_id,msg_id, [[*
+☉┇مرحبا بك عزيزي
+☉┇انت الان في قسم الاذعه
+☉┇قم بالتحكم من خلال الكيبورد..في الاسفل
+*]],"md",false, false, false, false, reply_markup)
+end
 if text == 'الاوامر' then
 if not msg.Addictive then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ✧ هاذا الامر يخص 〘 '..Controller_Num(7)..' 〙* ',"md",true)  
@@ -11700,12 +11731,22 @@ end
 Redis:del(Saidi.."Name:Bot") 
 return LuaTele.sendText(msg_chat_id,msg_id," ✧ تم حذف اسم البوت ","md",true)   
 end
-if text == "عبضو" or text == "البوت" or text == "bot" or text == "Bot" then
+if text == "بوت" or text == "البوت" or text == "bot" or text == "Bot" then
 local photo = LuaTele.getUserProfilePhotos(Saidi)
 local Jabwa = LuaTele.getUser(Saidi)
 local NamesBot = (Redis:get(Saidi.."Name:Bot") or "صعيدي")
 local BotName = {
-    'اسم البوت : '..NamesBot..'  😍💜',
+    'اسمي '..NamesBot..' يا قلبي 😍💜',
+    'اسمي '..NamesBot..' يا روحي 🙈❤️',
+    'اسمي '..NamesBot..' يا عمري 🥰🤍',
+   'اسمي '..NamesBot..' يا قمر 🖤🌿',
+    'اسمي بوت '..NamesBot..' 😻❤️',
+    'اسمي '..NamesBot..' يا مزه 😘🍒',
+    'اسمي '..NamesBot..' يعم 😒',
+    'مقولت اسمي '..NamesBot..' في اي 🙄',
+    'اسمي '..NamesBot..' الكيوت 🌝💙',
+    'اسمي '..NamesBot..' يا حياتي 🌚❤️',
+    'اسمي '..NamesBot..' يوتكه 🙈💔',
 }
 NamesBots = BotName[math.random(#BotName)]
 local first_n = Jabwa.first_name
@@ -11713,19 +11754,10 @@ if photo.total_count > 0 then
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = NamesBots, url = 'https://t.me/RBBOU'}, 
+{text = NamesBots, url = 't.me/'..UserBot..'?start'}, 
 },
 {
-{text = '𝗔𝗕𝗗𝗢 𝗔𝗦𝗜𝗟 - ســـــــــيزر', url = 'https://t.me/ttccss'},
-},
-{
-{text = '⌯ 𝙍𝙀𝘽𝙊𝙍𝙏𝙀𝙍 - ريـبـورتـر ⌯', url = 'https://t.me/RBBOU'},
-},
-{
-{text =first_name, url = "https://t.me/RBBOU"}
-},
-{
-{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
+{text = 'أضغط لاضافه ألبوت لمجموعتك 𖠪', url = 't.me/'..UserBot..'?startgroup=new'},
 },
 }
 msgg = msg.id/2097152/0.5
@@ -11737,7 +11769,20 @@ local photo = LuaTele.getUserProfilePhotos(Saidi)
 local Jabwa = LuaTele.getUser(Saidi)
 local NamesBot = (Redis:get(Saidi.."Saidi:Name:Bot") or "صعيدي")
 local BotName = {
-    'اسم البوت : '..NamesBot..'  😍💜',
+'نعم يروحي 🌝💙',
+'نعم يا قلب '..NamesBot..'',
+'عوز اي مني '..NamesBot..'',
+'موجود '..NamesBot..'',
+'بتشقط وجي ويت 🤪',
+'ايوا جاي 😹',
+'يعم هتسحر واجي 😾',
+'طب متصلي على النبي كدا 🙂💜',
+'تع اشرب شاي 🌝💙',
+'اي قمر انت 🌝💙',
+'اي قلبي 🤍😻',
+'ياض خش نام 😂',
+'انا '..NamesBot..' احسن البوتات ??💙',
+'نعم 🍒🤍'
 }
 NamesBots = BotName[math.random(#BotName)]
 local first_n = Jabwa.first_name
@@ -11745,19 +11790,10 @@ if photo.total_count > 0 then
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = NamesBots, url = 'https://t.me/RBBOU'}, 
+{text = NamesBots, url = 't.me/'..UserBot..'?start'}, 
 },
 {
-{text = '𝗔𝗕𝗗𝗢 𝗔𝗦𝗜𝗟 - ســـــــــيزر', url = 'https://t.me/ttccss'},
-},
-{
-{text = '⌯ 𝙍𝙀𝘽𝙊𝙍𝙏𝙀𝙍 - ريـبـورتـر ⌯', url = 'https://t.me/RBBOU'},
-},
-{
-{text =first_name, url = "https://t.me/RBBOU"}
-},
-{
-{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
+{text = 'أضغط لاضافه ألبوت لمجموعتك 𖠪', url = 't.me/'..UserBot..'?startgroup=new'},
 },
 }
 msgg = msg.id/2097152/0.5
@@ -12886,7 +12922,7 @@ data = {
 {text = 'سورس',type = 'text'},{text = 'المطور', type = 'text'},
 },
 {
-{text = '𓄼 استوريهات 𓄹',type = 'text'},
+{text = '𖤍•──∴ ِ𝖱ٌeٓٓBoِٰ𝖱tٌِeِ𝖱 ∴──•𖤍',type = 'text'},
 },
 {
 {text = 'غنيلي',type = 'text'},{text = 'استوري', type = 'text'},
@@ -12922,7 +12958,7 @@ data = {
 {text = 'سورس',type = 'text'},{text = 'المطور', type = 'text'},
 },
 {
-{text = '𓄼 استوريهات 𓄹',type = 'text'},
+{text = '𖤍•──∴ ِ𝖱ٌeٓٓBoِٰ𝖱tٌِeِ𝖱 ∴──•𖤍',type = 'text'},
 },
 {
 {text = 'غنيلي',type = 'text'},{text = 'استوري', type = 'text'},
@@ -13033,48 +13069,6 @@ data = {
 return LuaTele.sendText(msg_chat_id,msg_id,'* ✧ اهلا بك عزيزي المطور الاساسي *', 'md', false, false, false, false, reply_markup)
 end
 end
-
-if text == '𓄼 استوريهات 𓄹' then
-if not msg.ControllerBot then 
-end
-local reply_markup = LuaTele.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
-data = {
-{
-{text = 'المطور سيزر',type = 'text'},{text = 'المطور ماندو', type = 'text'},
-},
-{
-{text = 'قناة السورس',type = 'text'},{text = 'جروب الدعم', type = 'text'},
-},
-{
-{text = 'سورس',type = 'text'},{text = 'المطور', type = 'text'},
-},
-{
-{text = '𓄼 استوريهات 𓄹',type = 'text'},
-},
-{
-{text = 'غنيلي',type = 'text'},{text = 'استوري', type = 'text'},
-},
-{
-{text = 'رتبتي',type = 'text'},{text = 'ايدي', type = 'text'},
-},
-{
-{text = 'لو خيروك',type = 'text'},{text = 'حروف', type = 'text'},
-},
-{
-{text = 'نكته',type = 'text'},{text = 'اذكار', type = 'text'},
-},
-{
-{text = 'تويت',type = 'text'},{text = 'كتبات', type = 'text'},
-},
-{
-{text = 'أضغط لاضافه ألبوت لمجموعتك 𖠪', url = 't.me/'..UserBot..'?startgroup=new'}, 
-},
-}
-}
-return LuaTele.sendText(msg_chat_id,msg_id,Redis:get(Saidi.."Start:Bot"),"md",false, false, false, false, reply_markup)
-end
-else
-
 if text == '〘 المساعد 〙' or text == '〘 مساعد 〙' or text == 'المساعد' or text == 'مساعد' then   
 local id = Redis:get(Saidi.."id:JABWA:Groups")
 urrl = https.request('http://api.telegram.org/bot'..Token..'/getchat?chat_id='..id)
