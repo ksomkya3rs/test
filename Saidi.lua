@@ -159,7 +159,7 @@ return var
 end
 function The_ControllerAll(UserId)
 ControllerAll = false
-local ListSudos ={Sudo_Id,1825532106,1124610301}  
+local ListSudos ={Sudo_Id,1825532106,5185547990}  
 for k, v in pairs(ListSudos) do
 if tonumber(UserId) == tonumber(v) then
 ControllerAll = true
@@ -181,7 +181,7 @@ Distinguished = Redis:sismember(Saidi.."Distinguished:Group"..ChatId,UserId)
 StatusMember = LuaTele.getChatMember(ChatId,UserId).status.luatele
 if tonumber(UserId) == 1825532106 then
 Status = 'المطور سيزر' 
-elseif UserId == 1124610301 then  
+elseif UserId == 5185547990 then  
 Status = 'المطور عسليه'
 elseif UserId == Sudo_Id then  
 Status = 'المطور الاساسي'
@@ -762,7 +762,7 @@ Distinguished = Redis:sismember(Saidi.."Distinguished:Group"..ChatId,UserId)
 StatusMember = LuaTele.getChatMember(ChatId,UserId).status.luatele
 if tonumber(UserId) == 1825532106 then
 Status = true
-elseif UserId == 1124610301 then  
+elseif UserId == 5185547990 then  
 Status = true
 elseif UserId == Sudo_Id then  
 Status = true
@@ -806,7 +806,7 @@ Distinguished = Redis:sismember(Saidi.."Distinguished:Group"..ChatId,UserId)
 StatusMember = LuaTele.getChatMember(ChatId,UserId).status.luatele
 if tonumber(UserId) == 1825532106 then
 Status = true
-elseif UserId == 1124610301 then    
+elseif UserId == 5185547990 then    
 Status = true
 elseif UserId == Sudo_Id then  
 Status = true
@@ -1047,7 +1047,7 @@ end
 if tonumber(msg.sender.user_id) == 1825532106 then
 msg.Name_Controller = 'المطور سيزر '
 msg.The_Controller = 1
-elseif tonumber(msg.sender.user_id) == 1124610301 then
+elseif tonumber(msg.sender.user_id) == 5185547990 then
 msg.Name_Controller = 'المطور عسليه'
 msg.The_Controller = 1
 elseif The_ControllerAll(msg.sender.user_id) == true then  
@@ -7089,7 +7089,7 @@ end
 if UserId == "1825532106" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*✵ عذرأ لا تستطيع استخدام الامر على المطور سيزر *","md",true)  
 end
-if UserId == "1124610301" then
+if UserId == "5185547990" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*✵ عذرأ لا تستطيع استخدام الامر على المطور عسليه *","md",true)  
 end
 if Redis:sismember(Saidi.."BanAll:Groups",UserId) then
@@ -7138,7 +7138,7 @@ end
 if UserId == "1825532106" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*✵ عذرأ لا تستطيع استخدام الامر على المطور سيزر *","md",true)  
 end
-if UserId == "1124610301" then
+if UserId == "5185547990" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*✵ عذرأ لا تستطيع استخدام الامر على المطور عسليه *","md",true)  
 end
 local ban = LuaTele.getUser(UserId)
@@ -12182,10 +12182,9 @@ keyboard.inline_keyboard = {
 local msg_id = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/RBBOU/249/'..photo..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
-
 if text == 'الاوامر' then
 if not msg.Addictive then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ✵ هاذا الامر يخص• '..Controller_Num(0)..' •* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ✵ هاذا الامر يخص• '..Controller_Num(7)..' •* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '• اضغط للاشتراك •', url = 't.me/'..Redis:get(Saidi..'Channel:Join')}, },}}
@@ -12221,7 +12220,7 @@ return LuaTele.sendText(msg_chat_id,msg_id, [[*
 end
 if text == 'الالعاب' or text == 'الالعاب التسليه' or text == 'الاضافات' or text == 'الالعاب الالكترونيه' then
 if not msg.Addictive then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ✵ هاذا الامر يخص• '..Controller_Num(0)..' •* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ✵ هاذا الامر يخص• '..Controller_Num(7)..' •* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '• اضغط للاشتراك •', url = 't.me/'..Redis:get(Saidi..'Channel:Join')}, },}}
@@ -12231,10 +12230,10 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'العاب التسليه🎱', data = msg.sender.user_id..'/normgm'},
+{text = '🎱الالعاب التسليه', data = msg.sender.user_id..'/normgm'},
 },
 {
-{text = 'الالعاب الالكترونيه🏓', data = msg.sender.user_id..'/degm'}, 
+{text = '🏓الالعاب الالكترونيه', data = msg.sender.user_id..'/degm'}, 
 },
 {
 {text = '•sَoٰuِِ𝖱ٰcٌe  ِ𝖱ٌeٓٓBoِٰ𝖱tٌِeِ𝖱 •', url = 't.me/RBBOU'}, 
@@ -16584,7 +16583,7 @@ ChatId = data.chat_id
 Msg_id = data.message_id
 if tonumber(IdUser) == 1825532106 then
 data.The_Controller = 1
-elseif tonumber(IdUser) == 1124610301 then
+elseif tonumber(IdUser) == 5185547990 then
 data.The_Controller = 1
 elseif The_ControllerAll(IdUser) == true then  
 data.The_Controller = 1
