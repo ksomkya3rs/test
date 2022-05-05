@@ -12228,6 +12228,47 @@ keyboard.inline_keyboard = {
 local msg_id = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/RBBOU/249/'..photo..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
+if text == 'لعبني' then
+if not msg.Addictive then
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* بس يعرص الامر يخص 〘 '..Controller_Num(0)..' 〙* ',"md",true)  
+end
+if ChannelJoin(msg) == false then
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Saidi..'Channel:Join')}, },}}
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n ✧ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+end
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = 'تويت 🎯', data = msg.sender.user_id..'/Haiw1'}, 
+},
+{
+{text = 'صراحه 🎯', data = msg.sender.user_id..'/sezrx2'},
+},
+{
+{text = 'نكته 🎯', data = msg.sender.user_id..'/Haiw3'},
+},
+{
+{ {text = 'اذكار 🎯', data = msg.sender.user_id..'/Haiw5'},
+},
+{
+{text = 'كتبات 🎯', data = msg.sender.user_id..'/Haiw2'}, 
+},
+{
+{text = 'خيرني 🎯', data = msg.sender.user_id..'/Haiw4'},
+},
+{
+{text = 'sَoٰuِِ𝖱ٰcٌe  ِ𝖱ٌeٓٓBoِٰ𝖱tٌِeِ𝖱', url = 't.me/RBBOU'}, 
+},
+}
+}
+return LuaTele.sendText(msg_chat_id,msg_id, [[*
+🎯┇مرحبا بك عزيزي
+🎯┇انت الان في قسم المميزات
+🎯┇قم بالتحكم من خلال الكيبورد..في الاسفل
+*]],"md",false, false, false, false, reply_markup)
+end
+
 if text == 'اوامر الاذاعه' then
 if not msg.Addictive then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* بس يعرص الامر يخص 〘 '..Controller_Num(1)..' 〙* ',"md",true)  
