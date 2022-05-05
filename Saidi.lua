@@ -3333,7 +3333,7 @@ local msgg = msg_id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(mostafa).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(data))
 end
 end
-if text == 'معلوماتي' or text == 'انا مين' then
+if text == 'اصيل' or text == 'انا مين' then
 if not Redis:get(Saidi.."Arithmetic"..msg_chat_id) then
 return false
 end
@@ -3360,17 +3360,17 @@ UserInfousername = 'لا يوجد'
 end
 local Jabwaa = {
 
-"〈 صورتك عثل ينوحيي 🙈🌝 〉",
+"اسمي '..NamesBot..' يا قلبي 😍💜",
 
-"〈 صورتك ولا صورت القمر ??💕 〉",
+"اسمي '..NamesBot..' يا روحي 🙈❤️",
 
-"〈 يخرشي علي العسل ده 🥺💔 〉", 
+"اسمي '..NamesBot..' يا عمري 🥰🤍", 
 
-"〈 جمالك ده طبيعي يولا 🙈💗 〉",
+"اسمي '..NamesBot..' يا قمر 🖤🌿",
 
-"〈 غير بقاا صورتك يا قمر 🌚❤️ 〉",
+"اسمي بوت '..NamesBot..' 😻❤️",
 
-"〈 قمر التلي يود اهو 😻🤍 〉",
+"اسمي '..NamesBot..' يا مزه 😘🍒",
 } 
 local mostafa = Jabwaa[math.random(#Jabwaa)]
 local UserId = msg.sender.user_id
@@ -3387,18 +3387,6 @@ data = {}
 data.inline_keyboard = {
 {
 {text = uass, url = "https://t.me/"..ban.username..""}, 
-},
-{
-{text = news, url = "https://t.me/"..ban.username..""}, 
-},
-{
-{text = banhas, url = "https://t.me/"..ban.username..""}, 
-},
-{
-{text = rengk, url = "https://t.me/"..ban.username..""}, 
-},
-{
-{text = masha, url = "https://t.me/"..ban.username..""}, 
 },
 {
 {text = BIO, url = "https://t.me/"..ban.username..""}, 
