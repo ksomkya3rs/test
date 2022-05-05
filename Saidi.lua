@@ -3372,6 +3372,10 @@ local Jabwaa = {
 
 "اسمي '..NamesBot..' يا مزه 😘🍒",
 } 
+local rengk = {
+
+"  نعم حبيبي🙈🌝 ",
+} 
 local mostafa = Jabwaa[math.random(#Jabwaa)]
 local UserId = msg.sender.user_id
 local RinkBot = msg.Name_Controller
@@ -3386,13 +3390,13 @@ if photo.total_count > 0 then
 data = {} 
 data.inline_keyboard = {
 {
-{text = uass, url = "https://t.me/"..ban.username..""}, 
+{text = rengk, url = "https://t.me/"..ban.username..""}, 
 },
 {
 {text = BIO, url = "https://t.me/"..ban.username..""}, 
 },
 {
-{text = mostafa, url = "https://t.me/"..ban.username..""}, 
+{text = uass, url = "https://t.me/"..ban.username..""}, 
 },
 }
 local msgg = msg_id/2097152/0.5
