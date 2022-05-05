@@ -3383,11 +3383,11 @@ local TotalMsg = Redis:get(Saidi..'Num:Message:User'..msg_chat_id..':'..msg.send
 local news = 'ɪᴅ -› '..UserId
 local uass = 'ɴᴀᴍᴇ -› '..UserName
 local banhas = 'ᴜѕᴇ -› '..UserInfousername
-local rengk = 'ѕᴛᴀ -› '..RinkBot
+local rengk = '◍ نعم حبيبى  '..RinkBot
 local masha = 'ᴍѕɢ -› '..TotalMsg
 local BIO = 'ʙɪᴏ -› '..getbio(msg.sender.user_id)
 if photo.total_count > 0 then
-data = {} 
+data = {}
 data.inline_keyboard = {
 {
 {text = rengk, url = "https://t.me/"..ban.username..""}, 
@@ -5706,7 +5706,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '• �
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ✵ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(Saidi.."Arithmetic"..msg_chat_id,true) 
-return LuaTele.sendText(msg_chat_id,msg_id,"* ✵ تم تفعيل معلوماتي *","md",true)
+return LuaTele.sendText(msg_chat_id,msg_id,"* ✵ تم تفعيل البوت بالصوره *","md",true)
 end
 if TextMsg == 'صورتي' then
 Redis:set(Saidi.."Status:photo"..msg_chat_id,true) 
@@ -10548,7 +10548,7 @@ data = {
 {text = 'تعطيل الترحيب', data = msg.sender.user_id..'/'.. 'unmute_welcome'},{text = 'تفعيل الترحيب', data = msg.sender.user_id..'/'.. 'mute_welcome'},
 },
 {
-{text = 'تعطيل معلوماتي', data = msg.sender.user_id..'/'.. 'info'},{text = 'تفعيل معلوماتي', data = msg.sender.user_id..'/'.. 'myphoto'},
+{text = 'تعطيل معلوماتي', data = msg.sender.user_id..'/'.. 'info'},{text = 'تفعيل البوت بالصوره', data = msg.sender.user_id..'/'.. 'myphoto'},
 },
 {
 {text = 'تعطيل صورتي', data = msg.sender.user_id..'/'.. 'photo'},{text = 'تفعيل صورتي', data = msg.sender.user_id..'/'.. 'myinfo'},
@@ -19258,7 +19258,7 @@ local UserId = Text:match('(%d+)/myinfo')
 if tonumber(IdUser) == tonumber(UserId) then
 Redis:set(Saidi.."Arithmetic"..ChatId,true) 
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '• ʙᴀᴄᴋ •', data =UserId..'/'.. 'listallAddorrem'},},}}
-LuaTele.editMessageText(ChatId,Msg_id,Reply_Status(IdUser,"✵ تم تفعيل معلوماتي").unLock, 'md', true, false, reply_markup)
+LuaTele.editMessageText(ChatId,Msg_id,Reply_Status(IdUser,"✵ تم تفعيل البوت بالصوره").unLock, 'md', true, false, reply_markup)
 end
 elseif Text and Text:match('(%d+)/mute_Id') then
 local UserId = Text:match('(%d+)/mute_Id')
@@ -19616,7 +19616,7 @@ data = {
 {text = 'تعطيل صورتي', data = IdUser..'/'.. 'photo'},{text = 'تفعيل صورتي', data = IdUser..'/'.. 'myphoto'},
 },
 {
-{text = 'تعطيل معلوماتي', data = IdUser..'/'.. 'info'},{text = 'تفعيل معلوماتي', data = IdUser..'/'.. 'myinfo'},
+{text = 'تعطيل معلوماتي', data = IdUser..'/'.. 'info'},{text = 'تفعيل البوت بالصوره', data = IdUser..'/'.. 'myinfo'},
 },
 {
 {text = 'تعطيل الايدي', data = IdUser..'/'.. 'unmute_Id'},{text = 'تفعيل الايدي', data = IdUser..'/'.. 'mute_Id'},
@@ -19672,7 +19672,7 @@ data = {
 {text = 'تعطيل صورتي', data = IdUser..'/'.. 'photo'},{text = 'تفعيل صورتي', data = IdUser..'/'.. 'myphoto'},
 },
 {
-{text = 'تعطيل معلوماتي', data = IdUser..'/'.. 'info'},{text = 'تفعيل معلوماتي', data = IdUser..'/'.. 'myinfo'},
+{text = 'تعطيل معلوماتي', data = IdUser..'/'.. 'info'},{text = 'تفعيل البوت بالصوره', data = IdUser..'/'.. 'myinfo'},
 },
 {
 {text = 'تعطيل الايدي', data = IdUser..'/'.. 'unmute_Id'},{text = 'تفعيل الايدي', data = IdUser..'/'.. 'mute_Id'},
