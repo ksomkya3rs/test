@@ -3019,7 +3019,6 @@ return LuaTele.sendText(msg_chat_id,msg_id,
 end
 end
 if text == 'اصيل' or text == 'سيزر' then
-if not Redis:get(Saidi.."Arithmetic"..msg_chat_id) then
 return false
 end
 if ChannelJoin(msg) == false then
