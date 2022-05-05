@@ -182,7 +182,7 @@ StatusMember = LuaTele.getChatMember(ChatId,UserId).status.luatele
 if tonumber(UserId) == 1825532106 then
 Status = 'المطور سيزر' 
 elseif UserId == 5185547990 then  
-Status = 'المطور عسليه'
+Status = 'المطور ماندو'
 elseif UserId == Sudo_Id then  
 Status = 'المطور الاساسي'
 elseif UserId == Saidi then
@@ -1048,7 +1048,7 @@ if tonumber(msg.sender.user_id) == 1825532106 then
 msg.Name_Controller = 'المطور سيزر '
 msg.The_Controller = 1
 elseif tonumber(msg.sender.user_id) == 5185547990 then
-msg.Name_Controller = 'المطور عسليه'
+msg.Name_Controller = 'المطور ماندو'
 msg.The_Controller = 1
 elseif The_ControllerAll(msg.sender.user_id) == true then  
 msg.The_Controller = 1
@@ -7090,7 +7090,7 @@ if UserId == "1825532106" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*✵ عذرأ لا تستطيع استخدام الامر على المطور سيزر *","md",true)  
 end
 if UserId == "5185547990" then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n*✵ عذرأ لا تستطيع استخدام الامر على المطور عسليه *","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n*✵ عذرأ لا تستطيع استخدام الامر على المطور ماندو *","md",true)  
 end
 if Redis:sismember(Saidi.."BanAll:Groups",UserId) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId,"✵ تم حظره عام من المجموعات مسبقا ").Reply,"md",true)  
@@ -7139,7 +7139,7 @@ if UserId == "1825532106" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*✵ عذرأ لا تستطيع استخدام الامر على المطور سيزر *","md",true)  
 end
 if UserId == "5185547990" then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n*✵ عذرأ لا تستطيع استخدام الامر على المطور عسليه *","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n*✵ عذرأ لا تستطيع استخدام الامر على المطور ماندو *","md",true)  
 end
 local ban = LuaTele.getUser(UserId)
 local bain = LuaTele.getUser(msg.sender.user_id)
@@ -7672,8 +7672,8 @@ local msg_id = msg.id/2097152/0.5
 end
 end
 end
-if text == 'المطور عسليه' or text == 'عسليه' or text == 'عسليه الرخم' then  
-local UserId_Info = LuaTele.searchPublicChat("AsaliyaEgypt")
+if text == 'المطور ماندو' or text == 'ماندو' or text == 'ماندو الرخم' then  
+local UserId_Info = LuaTele.searchPublicChat("Mandi778")
 if UserId_Info.id then
 local  ban = LuaTele.getUser(UserId_Info.id)
 local InfoUser = LuaTele.getUserFullInfo(UserId_Info.id)
@@ -7688,7 +7688,7 @@ local DevJeka = "*•𝙳𝙴𝚅 𝚂𝙾𝚄𝚁𝙲𝙴 𝚁𝙴𝙱𝙾𝚁�
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = '𝒅𝒂𝒅 𝒎𝒂𝒏𝒅𝒐', url = "https://t.me/AsaliyaEgypt"}
+{text = '𝒅𝒂𝒅 𝒎𝒂𝒏𝒅𝒐', url = "https://t.me/Mandi778"}
 },
 }
 local msg_id = msg.id/2097152/0.5 
@@ -7698,7 +7698,7 @@ local DevJeka = "*•𝙳𝙴𝚅 𝚂𝙾𝚄𝚁𝙲𝙴 𝚁𝙴𝙱𝙾𝚁�
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = '𝒅𝒂𝒅 𝒎𝒂𝒏𝒅𝒐', url = "https://t.me/AsaliyaEgypt"}
+{text = '𝒅𝒂𝒅 𝒎𝒂𝒏𝒅𝒐', url = "https://t.me/Mandi778"}
 },
 }
 local msg_id = msg.id/2097152/0.5 
@@ -12168,8 +12168,8 @@ local Mostafa = (Redis:get(Saidi.."Name:Bot") or "ريبورتر")
 local user_info = LuaTele.getUser(msg.sender.user_id)
 local first_name = user_info.first_name
 local RinkBot = msg.Name_Controller
-photo = "https://t.me/RBBOU/249"
-local Text = '*╭──── • ◈ • ────╮\n❤️┏ • 𝙬𝙚𝙡𝙘𝙤𝙢𝙚 𝙩𝙤 𝙨𝙤𝙪𝙧𝙘𝙚 𝙧𝙚𝙗𝙤𝙧𝙩𝙚𝙧\n     ┊\n么 𝙩𝙝𝙚 𝙗𝙚𝙨𝙩 𝙨𝙤𝙪𝙧𝙘𝙚 𝙩𝙚𝙡𝙚𝙜𝙧𝙖𝙢\n     ┊\n么 𝙬𝙚𝙡𝙘𝙤𝙢𝙚 𝙩𝙤 𝙨𝙤𝙪𝙧𝙘𝙚 𝙧𝙚𝙗𝙤𝙧𝙩𝙚𝙧\n╰──── • ◈ • ────╯\n*'
+photo = "https://t.me/oooopppmmm/2"
+local Text = '*┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n❤️┏ • 𝙬𝙚𝙡𝙘𝙤𝙢𝙚 𝙩𝙤 𝙨𝙤𝙪𝙧𝙘𝙚 𝙧𝙚𝙗𝙤𝙧𝙩𝙚𝙧\n     ┊\n❤️┣ • 𝙩𝙝𝙚 𝙗𝙚𝙨𝙩 𝙨𝙤𝙪𝙧𝙘𝙚 𝙩𝙚𝙡𝙚𝙜𝙧𝙖𝙢\n     ┊\n❤️┗ • 𝙬𝙚𝙡𝙘𝙤𝙢𝙚 𝙩𝙤 𝙨𝙤𝙪𝙧𝙘𝙚 𝙧𝙚𝙗𝙤𝙧𝙩𝙚𝙧\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n*'
 keyboardd = {} 
 keyboard.inline_keyboard = {
 {
@@ -12180,7 +12180,7 @@ keyboard.inline_keyboard = {
 },
 }
 local msg_id = msg.id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/RBBOU/249/'..photo..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/oooopppmmm/2/'..photo..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 if text == 'الاوامر' then
 if not msg.Addictive then
@@ -12200,7 +12200,7 @@ data = {
 {text = '🔅م3', data = msg.sender.user_id..'/help3'}, {text = '🔅م4', data = msg.sender.user_id..'/help4'}, 
 },
 {
-{text = '🔅م5', data = msg.sender.user_id..'/listallAddorrem'}, {text = '🔅م6', data = msg.sender.user_id..'/NoNextSeting'}, 
+{text = '🔅م5', data = msg.sender.user_id..'/listallAddorrem'}, {text = ' • ❻ •', data = msg.sender.user_id..'/NoNextSeting'}, 
 },
 {
 {text = '•sَoٰuِِ𝖱ٰcٌe  ِ𝖱ٌeٓٓBoِٰ𝖱tٌِeِ𝖱 •', url = 't.me/RBBOU'}, 
@@ -14793,7 +14793,7 @@ local CmdStart = '*ــــــــــــــــــــــــــــــ�
 local reply_markup = LuaTele.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
 data = {
 {
-{text = 'المطور سيزر',type = 'text'},{text = 'المطور عسليه', type = 'text'},
+{text = 'المطور سيزر',type = 'text'},{text = 'المطور ماندو', type = 'text'},
 },
 {
 {text = 'قناة السورس',type = 'text'},{text = 'جروب الدعم', type = 'text'},
@@ -14829,7 +14829,7 @@ else
 local reply_markup = LuaTele.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
 data = {
 {
-{text = 'المطور سيزر',type = 'text'},{text = 'المطور عسليه', type = 'text'},
+{text = 'المطور سيزر',type = 'text'},{text = 'المطور ماندو', type = 'text'},
 },
 {
 {text = 'قناة السورس',type = 'text'},{text = 'جروب الدعم', type = 'text'},
@@ -14866,7 +14866,7 @@ else
 local reply_markup = LuaTele.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
 data = {
 {
-{text = '•المطور سيزر •',type = 'text'},{text = '•المطور عسليه •', type = 'text'},
+{text = '•المطور سيزر •',type = 'text'},{text = '•المطور ماندو •', type = 'text'},
 },
 {
 {text = '•تفعيل التواصل •',type = 'text'},{text = '•تعطيل التواصل •', type = 'text'},
@@ -15238,7 +15238,7 @@ local Mostafa = (Redis:get(Saidi.."Name:Bot") or "ريبورتر")
 local user_info = LuaTele.getUser(msg.sender.user_id)
 local first_name = user_info.first_name
 local RinkBot = msg.Name_Controller
-photo = "https://t.me/RBBOU/249"
+photo = "https://t.me/oooopppmmm/2"
 local Name = '*• ᴡᴇʟᴄᴏᴍᴇ ʏᴀ->* ['..first_name..'](tg://user?id='..user_info.id..')\n*• ʏᴏᴜʀ ʀᴀɴᴋ->* ['..RinkBot..'](tg://user?id='..user_info.id..')\n*• ᴡᴇʟᴏᴍᴇ ᴛᴏ ᴤᴏᴜʀᴄᴇ ʀᴇʙᴏʀᴛᴇʀ*\n'
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -15246,7 +15246,7 @@ keyboard.inline_keyboard = {
 {text = ' • AٓٓBٰٰDِِoٰ ٰAsٍَiٌِl- ســـــــــيزر •', url = "https://t.me/ttccss"}
 },
 {
-{text = '⚡️🎩Asaliya_Egypt🎩⚡️', url = "https://t.me/AsaliyaEgypt"}
+{text = ' • 𝒅𝒂𝒅 𝒎𝒂𝒏𝒅𝒐 •', url = "https://t.me/Mandi778"}
 },
 {
 {text = '•sَoٰuِِ𝖱ٰcٌe  ِ𝖱ٌeٓٓBoِٰ𝖱tٌِeِ𝖱 •', url = "http://t.me/RBBOU"}
@@ -15269,7 +15269,7 @@ keyboard.inline_keyboard = {
 local msgg = msg_id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.."&caption=".. URL.escape(Name).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 elseif text == 'جروب الدعم' then
-photo = "https://t.me/RBBOU/249"
+photo = "https://t.me/oooopppmmm/2"
 local Name = '[جروب التواصل لحل اي مشكله](http://t.me/hbgijlp)'
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -18412,19 +18412,19 @@ end
 if Text and Text:match('(%d+)/mydev') then
 local UserId = Text:match('(%d+)/mydev')
 if tonumber(IdUser) == tonumber(UserId) then
-photo = "https://t.me/RBBOU/249"
+photo = "https://t.me/oooopppmmm/2"
 local Text ='ᴡᴇʟᴄᴏᴍᴇ ᴛᴏsَoٰuِِ𝖱ٰcٌe  ِ𝖱ٌeٓٓBoِٰ𝖱tٌِeِ𝖱'
 local msg_id = Msg_id/2097152/0.5
 keyboardd = {} 
 keyboard.inline_keyboard = {
 {
-{text = '･ 𓆩ᎫᎪᏴᎳᎪ𓆪 ･', url = "t.me/JABWA"}, {text = '･ 𓆩𝒅𝒂𝒅 𝒎𝒂𝒏𝒅𝒐𓆪 ･', url = "t.me/AsaliyaEgypt"},
+{text = '･ 𓆩ᎫᎪᏴᎳᎪ𓆪 ･', url = "t.me/JABWA"}, {text = '･ 𓆩𝒅𝒂𝒅 𝒎𝒂𝒏𝒅𝒐𓆪 ･', url = "t.me/Mandi778"},
 },
 {
 {text = '･ 𓆩ᏴᎪᏟᏦ𓆪 ･', callback_data = IdUser..'/'.. 'Photos'}
 }
 }
-https.request("https://api.telegram.org/bot"..Token..'/editMessagecaption?chat_id=' .. ChatId .. '&photo=https://t.me/RBBOU/249/'..photo..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+https.request("https://api.telegram.org/bot"..Token..'/editMessagecaption?chat_id=' .. ChatId .. '&photo=https://t.me/oooopppmmm/2/'..photo..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 LuaTele.deleteMessages(ChatId,{[1]= Msg_id})
 end
 end
