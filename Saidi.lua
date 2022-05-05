@@ -12249,7 +12249,7 @@ data = {
 {text = '☉┇اذاعه بالتوجيه خاص', data = msg.sender.user_id..'/sezrx3'},
 },
 {
-{ {text = '☉┇اذاعه للمطورين', data = msg.sender.user_id..'/NoNextSeting'},
+{text = '☉┇اذاعه للمطورين', data = msg.sender.user_id..'/NoNextSeting'},
 },
 {
 {text = '☉┇اذاعه بالتوجيه', data = msg.sender.user_id..'/sezrx4'}, 
