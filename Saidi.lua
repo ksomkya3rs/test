@@ -12229,8 +12229,8 @@ local msg_id = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/RBBOU/249/'..photo..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 if text == 'اوامر الاذاعه' then
-if not msg.Addictive then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* بس يعرص الامر يخص 〘 '..Controller_Num(1)..' 〙* ',"md",true)  
+if not msg.ControllerBot then 
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ✧ هاذا الامر يخص〘 '..Controller_Num(1)..' 〙* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Saidi..'Channel:Join')}, },}}
@@ -12240,7 +12240,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '☉┇اذاعه خاص', data = msg.sender.user_id..'/sezrx1'}, 
+{text = '☉┇اذاعه خاص', data = msg.sender.user_id..'/sezrx1'},
 },
 {
 {text = '☉┇اذاعه للمجموعات', data = msg.sender.user_id..'/sezrx2'},
@@ -12249,7 +12249,7 @@ data = {
 {text = '☉┇اذاعه بالتوجيه خاص', data = msg.sender.user_id..'/sezrx3'},
 },
 {
-{text = '☉┇اذاعه للمطورين', data = msg.sender.user_id..'/NoNextSeting'},
+{ {text = '☉┇اذاعه للمطورين', data = msg.sender.user_id..'/NoNextSeting'},
 },
 {
 {text = '☉┇اذاعه بالتوجيه', data = msg.sender.user_id..'/sezrx4'}, 
@@ -18538,6 +18538,13 @@ local UserId = Text:match('(%d+)/yaaaaa')
 if tonumber(IdUser) == tonumber(UserId) then
 LuaTele.editMessageText(ChatId,Msg_id,"*✵ ارسل معرف المطور الاساسي مع @*","md",true) 
 Redis:set(Saidi.."AddSudosNew"..ChatId,true)
+end
+end
+if Text and Text:match('(%d+)/sezrx1') then
+local UserId = Text:match('(%d+)/sezrx1')
+if tonumber(IdUser) == tonumber(UserId) then
+LuaTele.editMessageText(ChatId,Msg_id,"*✧ ارسل الاذاعه*","md",true) 
+Redis:set(Saidi.."Send:Bc:Pv"..ChatId,true)
 end
 end
 if Text and Text:match('(%d+)/Namebot') then
