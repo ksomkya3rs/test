@@ -12374,17 +12374,17 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '🧑‍💻: المـطـور الاسـاسـي', data = msg.sender.user_id..'/yaaaaa'},
+{text = 'المـطـور الاسـاسـي', data = msg.sender.user_id..'/yaaaaa'},
 },
 {
-{text = '🤖 : اسـم البــوت', data = msg.sender.user_id..'/Namebot'},
+{text = 'اسـم البــوت', data = msg.sender.user_id..'/Namebot'},
 },
 {
 {text = 'الـغـاء الامـر', data = msg.sender.user_id..'/Redis'},
 },
 }
 }
-return LuaTele.sendText(msg_chat_id,msg_id,'*⚙️ اليك ازرار تغيير\🧑‍💻nالمطور الاساسي\n🤖اسم البوت*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg_chat_id,msg_id,'*اليك ازرار تغيير\nالمطور الاساسي\nاسم البوت*',"md",false, false, false, false, reply_markup)
 end
 if text == 'تنظيف المشتركين' then
 if not msg.ControllerBot then 
