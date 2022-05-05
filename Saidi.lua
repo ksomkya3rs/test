@@ -12249,7 +12249,7 @@ data = {
 {text = 'نكته 🎯', data = msg.sender.user_id..'/Haiw3'},
 },
 {
-{ {text = 'اذكار 🎯', data = msg.sender.user_id..'/Haiw5'},
+{text = 'اذكار 🎯', data = msg.sender.user_id..'/Haiw5'},
 },
 {
 {text = 'كتبات 🎯', data = msg.sender.user_id..'/Haiw2'}, 
