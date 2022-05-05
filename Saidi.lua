@@ -7166,37 +7166,6 @@ data = {
 }
 LuaTele.sendText(Sudo_Id,0,'*\n✧ مرحبا سيدي المطور \n✧ شخص ما يحتاج الي مساعده\n✧ اسمه -› '..klajq..' \n✧ ايديه -› '..msg.sender.user_id..'\n✧ معرفة -› '..basgk..' \n*',"md",false, false, false, false, reply_markup)
 end
-if text == 'تحكم الاذاعه' then
-if not msg.Addictive then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ✵ هاذا الامر يخص• '..Controller_Num(1)..' •* ',"md",true)  
-end
-local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-if UserInfo and UserInfo.type and UserInfo.type.luatele == "userTypeBot" then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n✵ عذرأ لا تستطيع استخدام الامر على البوت ","md",true)  
-end
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
-{
-{text = '☉┇اذاعه خاص', data = msg.sender.user_id..'/groupNumseteng//'..Message_Reply.sender.user_id}, 
-},
-{
-{text = '☉┇اذاعه للمجموعات', data = msg.sender.user_id..'/rankup//'..Message_Reply.sender.user_id}, 
-},
-{
-{text = '☉┇اذاعه بالتوجيه', data = msg.sender.user_id..'/rankup//'..Message_Reply.sender.user_id}, 
-},
-{
-{text = '☉┇اذاعه بالتوجيه خاص', data = msg.sender.user_id..'/rankup//'..Message_Reply.sender.user_id}, 
-},
-{
-{text = '☉┇اذاعه بالتثبيت', data = msg.sender.user_id..'/rankup//'..Message_Reply.sender.user_id}, 
-},
-{
-{text = '☉┇اذاعه للمطورين', data = msg.sender.user_id..'/rankup//'..Message_Reply.sender.user_id}, 
-},
-}
-}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n☉┇مرحبا بك عزيزي\n☉┇انت الان في قسم الاذاعه\n☉┇قم بالتحكم من خلال الكيبورد..في الاسفل*',"md",false, false, false, false, reply_markup)
-end
 
 if text == 'كشف البوتات' then
 if not msg.Managers then
@@ -11160,6 +11129,38 @@ keyboard.inline_keyboard = {
 local msgg = msg_id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.."&caption=".. URL.escape(Name).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
+
+if text == 'تحكم الاذاعه' then
+if not msg.Addictive then
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ✵ هاذا الامر يخص• '..Controller_Num(1)..' •* ',"md",true)  
+end
+local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
+if UserInfo and UserInfo.type and UserInfo.type.luatele == "userTypeBot" then
+return LuaTele.sendText(msg_chat_id,msg_id,"\n✵ عذرأ لا تستطيع استخدام الامر على البوت ","md",true)  
+end
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
+{
+{text = '☉┇اذاعه خاص', data = msg.sender.user_id..'/groupNumseteng//'..Message_Reply.sender.user_id}, 
+},
+{
+{text = '☉┇اذاعه للمجموعات', data = msg.sender.user_id..'/rankup//'..Message_Reply.sender.user_id}, 
+},
+{
+{text = '☉┇اذاعه بالتوجيه', data = msg.sender.user_id..'/rankup//'..Message_Reply.sender.user_id}, 
+},
+{
+{text = '☉┇اذاعه بالتوجيه خاص', data = msg.sender.user_id..'/rankup//'..Message_Reply.sender.user_id}, 
+},
+{
+{text = '☉┇اذاعه بالتثبيت', data = msg.sender.user_id..'/rankup//'..Message_Reply.sender.user_id}, 
+},
+{
+{text = '☉┇اذاعه للمطورين', data = msg.sender.user_id..'/rankup//'..Message_Reply.sender.user_id}, 
+},
+}
+}
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n☉┇مرحبا بك عزيزي\n☉┇انت الان في قسم الاذاعه\n☉┇قم بالتحكم من خلال الكيبورد..في الاسفل*',"md",false, false, false, false, reply_markup)
+end
 if text == 'جابوا' or text == 'المطور جابوا' or text == 'مطور السورس' then
 photo = "https://t.me/JABWA"
 local Name = '*المطور جابوا مطور السورس لو حاابب تتواصل معاه بالاسفل ⬇️*'
@@ -11418,6 +11419,7 @@ end
 return LuaTele.sendText(msg_chat_id,msg_id,'*خالتك جرت ورايا 😹💔*',"md",false, false, false, false, reply_markup)
 end
 if text == 'سلام عليكم' or text == 'السلام عليكم' then
+if not Redis:get(Saidi.."Jabwa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* ✧ ردود السورس معطلة*","md",true)  
 end
 return LuaTele.sendText(msg_chat_id,msg_id,'*وعليكم السلام 🌝💜*',"md",false, false, false, false, reply_markup)
@@ -13099,7 +13101,7 @@ data = {
 },
 }
 }
-return LuaTele.sendText(msg_chat_id,msg_id,'* 💌╖اهلا بيك حبيبي آلمـطـور\n⚙️╢ تقدر تتحكم باوامر البوت عن طريق\n🔍╢ الكيبورد اللي ظهرتلك تحت ↘️\n🔰╜ للدخول لقناة السورس دوس هنا (http://t.me/RBBOU) *', 'md', false, false, false, false, reply_markup)
+return LuaTele.sendText(msg_chat_id,msg_id,'* ✧ اهلا بك عزيزي المطور الاساسي *', 'md', false, false, false, false, reply_markup)
 end
 end
 if text == '〘 المساعد 〙' or text == '〘 مساعد 〙' or text == 'المساعد' or text == 'مساعد' then   
