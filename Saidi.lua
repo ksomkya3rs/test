@@ -13729,31 +13729,6 @@ msgg = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(NamesBots).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 end
-if text == '𓄼 مطور السورس 𓄹' or text == 'عسكري' or text == 'احمد العسكري' or text == 'مطور السورس' then  
-local UserId_Info = LuaTele.searchPublicChat("Ahmeaaa11")
-if UserId_Info.id then
-local  ban = LuaTele.getUser(UserId_Info.id)
-local  bain = LuaTele.getUserFullInfo(Sudo_Id)
-if  bain.bio then
-Bio =  bain.bio
-else
-Bio = 'لا يوجد'
-end
-local photo = LuaTele.getUserProfilePhotos(UserId_Info.id)
-if photo.total_count > 0 then
-local TestText = "  ❲ 𓄼•ᴅᴇᴠ•ѕᴇᴢʀ•𓄹 ❳\n༺┉┉┉⊶﴾𓄼•𝘴ꪮꪊ𝘳ᥴꫀ ꪜ𝓲𝘬𝓲ꪀᧁ•𓄹﴿⊷┉┉┉༻\n ⌯*Dev Name* :  [".. ban.first_name.."](tg://user?id="..UserId_Info.id..")\n⌯ *Dev Bio* : [❲ "..Bio.." ❳]"
-keyboardd = {} 
-keyboardd.inline_keyboard = {
-{
-{text = '𓄼•𝙴𝙻3𝚂𝙺𝙴𝚁𝙰•𓄹', url = "https://t.me/Ahmeaaa11"}
-},
-{
-{text = '𓄼•ɢʀᴏ𝗎ᴘ•𓄹', url = "https://t.me/TEAMSaidi1"},{text = '𓄼•ᴄʜᴀɴɴᴇʟ•𓄹', url = "https://t.me/V_I_K_I_N_G_1"}
-},
-}
-local msg_id = msg.id/2097152/0.5 
- https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id='..msg.chat_id..'&caption='..URL.escape(TestText)..'&photo='..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id..'&reply_to_message_id='..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboardd))
-else
 if text == "غنيلي" then
 local t = "اليك اغنيه عشوائيه من البوت"
 Num = math.random(8,83)
