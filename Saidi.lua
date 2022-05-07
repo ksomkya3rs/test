@@ -2015,7 +2015,7 @@ end
 Redis:del(Saidi.."Saidi:Redis:Id:Group"..msg.chat_id..""..msg.sender.user_id) 
 Redis:set(Saidi.."Saidi:Set:Id:Group"..msg.chat_id,text:match("(.*)"))
 LuaTele.sendText(msg_chat_id,msg_id,' ⌯ تم تعين الايدي الجديد',"md",true)  
-end
+end 
 if Redis:get(Saidi.."Saidi:Change:Saidi:Name:Bot"..msg.sender.user_id) then 
 if text == "الغاء" or text == '𓄼 الغاء الامر 𓄹' then   
 Redis:del(Saidi.."Saidi:Change:Saidi:Name:Bot"..msg.sender.user_id) 
@@ -2027,14 +2027,14 @@ return LuaTele.sendText(msg_chat_id,msg_id, " ⌯ تم تغير اسم البو�
 end  
 if Redis:get(Saidi.."Saidi:Change:Start:Bot"..msg.sender.user_id) then 
 if text == "الغاء" or text == '𓄼 الغاء الامر 𓄹' then   
-Redis:del(Saidi.."Saidi:Change:Saidi:Name:Sezr"..msg.sender.user_id) 
+Redis:del(Saidi.."Saidi:Change:Saidi:Name:Bot"..msg.sender.user_id) 
 return LuaTele.sendText(msg_chat_id,msg_id, "\n ⌯ تم الغاء امر تغير اسم البوت","md",true)  
 end 
-Redis:del(Saidi.."Saidi:Change:Saidi:Name:Sezr"..msg.sender.user_id) 
-Redis:set(Saidi.."Saidi:Name:Sezr",text) 
+Redis:del(Saidi.."Saidi:Change:Saidi:Name:Bot"..msg.sender.user_id) 
+Redis:set(Saidi.."Saidi:Name:Bot",text) 
 return LuaTele.sendText(msg_chat_id,msg_id, " ⌯ تم تغير اسم المطور الي - "..text,"md",true)    
 end 
-if Redis:get(Saidi.."Saidi:Change:Start:Sezr"..msg.sender.user_id) then 
+if Redis:get(Saidi.."Saidi:Change:Start:Bot"..msg.sender.user_id) then 
 if text == "الغاء" or text == '𓄼 الغاء الامر 𓄹' then   
 Redis:del(Saidi.."Saidi:Change:Start:Bot"..msg.sender.user_id) 
 return LuaTele.sendText(msg_chat_id,msg_id, "\n ⌯ تم الغاء امر تغير كليشه start","md",true)  
