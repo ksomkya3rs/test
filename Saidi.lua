@@ -10538,6 +10538,76 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
 }
 return LuaTele.sendText(msg_chat_id, msg_id, again, 'md', false, false, false, false, reply_markup)
 end
+if text == 'اصيل' or text == 'انا مين' then
+if not Redis:get(Saidi.."Arithmetic"..msg_chat_id) then
+return false
+end
+if ChannelJoin(msg) == false then
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '• اضغط للاشتراك •', url = 't.me/'..Redis:get(Saidi..'Channel:Join')}, },}}
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n✵ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+end
+local ban = LuaTele.getUser(msg.sender.user_id)
+local photo = LuaTele.getUserProfilePhotos(msg.sender.user_id)
+if ban.first_name then
+news = " "..ban.first_name.." "
+else
+news = " لا يوجد"
+end
+if ban.first_name then
+UserName = ' '..ban.first_name..' '
+else
+UserName = 'لا يوجد'
+end
+if ban.username then
+UserInfousername = '@'..ban.username..''
+else
+UserInfousername = 'لا يوجد'
+end
+local Jabwaa = {
+
+"اسمي '..NamesBot..' يا قلبي 😍💜",
+
+"اسمي '..NamesBot..' يا روحي 🙈❤️",
+
+"اسمي '..NamesBot..' يا عمري 🥰🤍", 
+
+"اسمي '..NamesBot..' يا قمر 🖤🌿",
+
+"اسمي بوت '..NamesBot..' 😻❤️",
+
+"اسمي '..NamesBot..' يا مزه 😘🍒",
+} 
+local rengk = {
+
+"  نعم حبيبي🙈🌝 ",
+} 
+local mostafa = Jabwaa[math.random(#Jabwaa)]
+local UserId = msg.sender.user_id
+local RinkBot = msg.Name_Controller
+local TotalMsg = Redis:get(Saidi..'Num:Message:User'..msg_chat_id..':'..msg.sender.user_id) or 0
+local news = 'ɪᴅ -› '..UserId
+local uass = 'ɴᴀᴍᴇ -› '..UserName
+local banhas = 'ᴜѕᴇ -› '..UserInfousername
+local rengk = '◍ نعم حبيبى  '..RinkBot
+local masha = '› '..TotalMsg
+local BIO = '› '..getbio(msg.sender.user_id)
+if photo.total_count > 0 then
+data = {}
+data.inline_keyboard = {
+{
+{text = rengk, url = "https://t.me/"..ban.username..""}, 
+},
+{
+{text = BIO, url = "https://t.me/"..ban.username..""}, 
+},
+{
+{text = uass, url = "https://t.me/"..ban.username..""}, 
+},
+}
+local msgg = msg_id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(mostafa).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(data))
+end
+end
 if text == 'بايو' then
 local ban = LuaTele.getUser(msg.sender.user_id)
 local BIO = 'ʙɪᴏ : '..getbio(msg.sender.user_id)
