@@ -13899,7 +13899,7 @@ end
 Redis:del(Saidi.."Saidi:Start:Bot") 
 return LuaTele.sendText(msg_chat_id,msg_id," ⌯ تم حذف كليشه Start ","md",true)   
 end
-if text == '𓄼 تغير اسم المطور 𓄹' then 
+if text == '𓄼 تغيير اسم البوت 𓄹' then 
 if not msg.ControllerBot then 
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(1)..' 𓄹* ',"md",true)  
 end
@@ -13907,10 +13907,10 @@ if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/V_I_K_I_N_G_1'}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-Redis:setex(Saidi.."Saidi:Change:Saidi:Name:Sezr"..msg.sender.user_id,300,true) 
+Redis:setex(Saidi.."Saidi:Change:Saidi:Name:Bot"..msg.sender.user_id,300,true) 
 return LuaTele.sendText(msg_chat_id,msg_id," ⌯ ارسل لي الاسم الان ","md",true)  
 end
-if text == '𓄼 جذف اسم المطور 𓄹' then 
+if text == '𓄼 حذف اسم البوت 𓄹' then 
 if not msg.ControllerBot then 
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(1)..' 𓄹* ',"md",true)  
 end
