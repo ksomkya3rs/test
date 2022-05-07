@@ -10539,7 +10539,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
 return LuaTele.sendText(msg_chat_id, msg_id, again, 'md', false, false, false, false, reply_markup)
 end
 if text == 'اصيل' or text == 'انا مين' then
-if not Redis:get(Saidi.."Arithmetic"..msg_chat_id) then
+local ban = LuaTele.getUser(msg.sender.user_id)
 return false
 end
 if ChannelJoin(msg) == false then
