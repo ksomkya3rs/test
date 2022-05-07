@@ -2024,8 +2024,17 @@ end
 Redis:del(Saidi.."Saidi:Change:Saidi:Name:Bot"..msg.sender.user_id) 
 Redis:set(Saidi.."Saidi:Name:Bot",text) 
 return LuaTele.sendText(msg_chat_id,msg_id, " ⌯ تم تغير اسم البوت الى - "..text,"md",true)    
-end 
+end  
 if Redis:get(Saidi.."Saidi:Change:Start:Bot"..msg.sender.user_id) then 
+if text == "الغاء" or text == '𓄼 الغاء الامر 𓄹' then   
+Redis:del(Saidi.."Saidi:Change:Saidi:Name:Sezr"..msg.sender.user_id) 
+return LuaTele.sendText(msg_chat_id,msg_id, "\n ⌯ تم الغاء امر تغير اسم البوت","md",true)  
+end 
+Redis:del(Saidi.."Saidi:Change:Saidi:Name:Sezr"..msg.sender.user_id) 
+Redis:set(Saidi.."Saidi:Name:Sezr",text) 
+return LuaTele.sendText(msg_chat_id,msg_id, " ⌯ تم تغير اسم المطور الي - "..text,"md",true)    
+end 
+if Redis:get(Saidi.."Saidi:Change:Start:Sezr"..msg.sender.user_id) then 
 if text == "الغاء" or text == '𓄼 الغاء الامر 𓄹' then   
 Redis:del(Saidi.."Saidi:Change:Start:Bot"..msg.sender.user_id) 
 return LuaTele.sendText(msg_chat_id,msg_id, "\n ⌯ تم الغاء امر تغير كليشه start","md",true)  
@@ -10158,6 +10167,60 @@ local msg_id = msg.id/2097152/0.5
  https.request("https://api.telegram.org/bot"..Token..'/sendMessage?chat_id=' .. msg.chat_id .. '&text=' .. URL.escape(TestText).."&reply_to_message_id="..msg_id.."&parse_mode=markdown")
 end
 end
+
+if text == (Redis:get(Saidi.."Saidi:Name:Sezr") or "سيزر") then
+local  ban = LuaTele.getUser(Sudo_Id) 
+local  bain = LuaTele.getUserFullInfo(Sudo_Id)
+local Get_Chat = LuaTele.getChat(msg_chat_id)
+local Info_Chats = LuaTele.getSupergroupFullInfo(msg_chat_id)
+local bains = LuaTele.getUser(msg.sender.user_id)
+for Name_User in string.gmatch(UserInfo.first_name, "[^%s]+" ) do
+UserInfo.first_name = Name_User
+break
+end 
+local NamesBot = (Redis:get(Saidi.."Saidi:Name:Sezr") or "سيزر")
+if  bain.bio then
+Bio =  bain.bio
+else
+Bio = 'لا يوجد'
+end
+if bains.first_name then
+klajq = '*['..bains.first_name..'](tg://user?id='..bains.id..')*'
+else
+klajq = 'لا يوجد'
+end
+if bains.username then
+basgk = ' '..bains.username..' '
+else
+basgk = 'لا يوجد'
+end
+if ban.username then
+Creator = "* "..ban.first_name.."*\n"
+else
+Creator = "* ["..ban.first_name.."](tg://user?id="..ban.id..")*\n"
+end
+if ban.first_name then
+Creat = " "..ban.first_name.." "
+else
+Creat = " Developers Bot \n"
+end
+local photo = LuaTele.getUserProfilePhotos(Sudo_Id)
+if photo.total_count > 0 then
+local TestText = "  ❲ Developers Bot ❳\n— — — — — — — — —\n ⌯*Dev Name* :  [".. ban.first_name.."](tg://user?id="..Sudo_Id..")\n⌯ *Dev Bio* : ["..Bio.." ]\n"
+keyboardd = {} 
+keyboardd.inline_keyboard = {
+{
+{text = Creat, url = "https://t.me/"..ban.username..""},
+},
+}
+local msg_id = msg.id/2097152/0.5 
+ https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id='..msg.chat_id..'&caption='..URL.escape(TestText)..'&photo='..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id..'&reply_to_message_id='..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboardd))
+else
+local TestText = "  ❲ Developers Saidi  ❳\n— — — — — — — — —\n ⌯*Dev Name* :  [".. ban.first_name.."](tg://user?id="..Sudo_Id..")\n⌯ *Dev Bio* : [❲ "..Bio.." ❳]"
+local msg_id = msg.id/2097152/0.5 
+ https.request("https://api.telegram.org/bot"..Token..'/sendMessage?chat_id=' .. msg.chat_id .. '&text=' .. URL.escape(TestText).."&reply_to_message_id="..msg_id.."&parse_mode=markdown")
+end
+end
  
 if text == '453435453453 ' or text == '53453455465345' or text == '45656456645654456' or text == '𓄼 56565656456455 𓄹' then    
 local UserId_Info = LuaTele.searchPublicChat("tt_t_4")
@@ -11934,6 +11997,28 @@ return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك ف
 end
 Redis:del(Saidi.."Saidi:Name:Bot") 
 return LuaTele.sendText(msg_chat_id,msg_id," ⌯ تم حذف اسم البوت ","md",true)   
+end
+if text == "تغير اسم المطور" then 
+if not msg.ControllerBot then 
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(1)..' 𓄹* ',"md",true)  
+end
+if ChannelJoin(msg) == false then
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/V_I_K_I_N_G_1'}, },}}
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة المطور لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+end
+Redis:setex(Saidi.."Saidi:Change:Saidi:Name:Sezr"..msg.sender.user_id,300,true) 
+return LuaTele.sendText(msg_chat_id,msg_id," ⌯ ارسل لي الاسم الان ","md",true)  
+end
+if text == "حذف اسم المطور" then 
+if not msg.ControllerBot then 
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(1)..' 𓄹* ',"md",true)  
+end
+if ChannelJoin(msg) == false then
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/V_I_K_I_N_G_1'}, },}}
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة المطور لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+end
+Redis:del(Saidi.."Saidi:Name:Sezr") 
+return LuaTele.sendText(msg_chat_id,msg_id," ⌯ تم حذف اسم المطور ","md",true)   
 end
 if text == "بوت" or text == "البوت" or text == "bot" or text == "Bot" then
 local photo = LuaTele.getUserProfilePhotos(Saidi)
